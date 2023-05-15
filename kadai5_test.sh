@@ -1,7 +1,7 @@
 #!/bin/bash
 # Test code for syspro2023 kadai5
 # Written by Shinichi Awamoto and Daichi Morita
-# Edited by PENG AO
+# Edited by PENG AO and Joe Hattori
 
 state=0
 warn() { echo $1; state=1; }
@@ -41,7 +41,7 @@ kadai-a() {
             warn "kadai-a: Fork was not called."
         fi
 
-        if [ `grep 'wait' $out` ]; then
+        if [ `grep 'wait' $out | wc -l` -eq 0 ]; then
             warn "kadai-a: Wait was not called."
         fi
 
@@ -152,7 +152,7 @@ kadai-c() {
         check-ish c1 "Failed to redicrect out"
         check-ish c2 "Failed to redicrect in"
         check-ish c3 "Failed to pipe"
-        check-ish c4 "Failed to pipe large file" sleep
+        check-ish c4 "Failed to pipe large file"
 
         make clean > /dev/null 2>&1
 
@@ -172,7 +172,7 @@ kadai-c() {
 
         popd > /dev/null 2>&1
     else
-        warn "kadai-b: No 'kadai-bcde' directory"
+        warn "kadai-c: No 'kadai-bcde' directory"
     fi
 }
 
