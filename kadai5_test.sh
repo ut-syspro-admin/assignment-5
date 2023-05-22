@@ -214,7 +214,7 @@ END
 }
 
 kadai-d() {
-    if [ -d kadai-bcde ] && [ -f kadai-d.txt ]; then
+    if [ -d kadai-bcde ] && [ -f kadai-bcde/report-d.txt ]; then
         cp -r kadai-bcde $dir
         pushd $dir/kadai-bcde > /dev/null 2>&1
 
@@ -270,7 +270,7 @@ END
 }
 
 kadai-e() {
-    if [ -d kadai-bcde ] && [ -f kadai-e.txt ]; then
+    if [ -d kadai-bcde ] && [ -f kadai-bcde/report-e.txt ]; then
         cp -r kadai-bcde $dir
         pushd $dir/kadai-bcde > /dev/null 2>&1
 
